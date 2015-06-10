@@ -5,7 +5,7 @@ module Fixture
     class Example
       extend Virtual
 
-      abstract :some_abstract_method
+      pure_virtual :some_abstract_method
     end
 
     def self.example

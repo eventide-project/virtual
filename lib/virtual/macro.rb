@@ -5,10 +5,10 @@ module Virtual
     end
     alias :virtual :virtual_macro
 
-    def pure__macro(method_name)
+    def pure_macro(method_name)
       Virtual::PureMethod.define self, method_name
     end
-    alias :pure_virtual :pure__macro
-    alias :abstract :pure__macro
+    alias :pure_virtual :pure_macro
+    alias :abstract :pure_macro
   end
 end
