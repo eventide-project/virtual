@@ -1,7 +1,7 @@
 module Virtual
   class PureMethodError < RuntimeError
     def initialize(message)
-      super("Pure virtual (abstract) method #{message} must be implemented in subclass")
+      super("Pure virtual (abstract) method #{message} must be implemented")
     end
   end
 
