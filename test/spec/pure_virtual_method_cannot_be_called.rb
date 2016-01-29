@@ -14,12 +14,15 @@ module Fixture
   end
 end
 
-describe "Virtual" do
-  it "Defines a method" do
+context "Virtual" do
+  test "Defines a method" do
     example = Fixture::PureVirtualMethodCannotBeCalled.example
 
-    assert_raises Virtual::PureMethodError do
+    begin
       example.some_pure_virtual_method
+    rescue Virtual::PureMethodError => error
     end
+
+    assert error
   end
 end

@@ -14,8 +14,8 @@ module Fixture
   end
 end
 
-describe "Virtual" do
-  it "Defines a method" do
+context "Virtual" do
+  test "Defines a method" do
     example = Fixture::MethodWithArgs.example
     example.some_virtual_method 'some value', 'some other value'
   end

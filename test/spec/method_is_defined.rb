@@ -14,8 +14,8 @@ module Fixture
   end
 end
 
-describe "Virtual" do
-  it "Defines a method" do
+context "Virtual" do
+  test "Defines a method" do
     example = Fixture::MethodIsDefined.example
     example.respond_to? :some_virtual_method
   end
