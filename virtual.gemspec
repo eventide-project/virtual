@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name = 'virtual'
-  s.version = '0.0.1.2'
+  s.version = '0.0.1.3'
   s.summary = 'Virtual method declaration'
   s.description = ' '
 
