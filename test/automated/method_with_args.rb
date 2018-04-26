@@ -1,7 +1,7 @@
-require_relative './bench_init'
+require_relative './automated_init'
 
 module Fixture
-  module MethodIsDefined
+  module MethodWithArgs
     class Example
       extend Virtual
 
@@ -16,7 +16,7 @@ end
 
 context "Virtual" do
   test "Defines a method" do
-    example = Fixture::MethodIsDefined.example
-    example.respond_to? :some_virtual_method
+    example = Fixture::MethodWithArgs.example
+    example.some_virtual_method 'some value', 'some other value'
   end
 end
