@@ -21,7 +21,7 @@ The `pure_virtual` macro is also aliased to `abstract`.
 
 The `virtual` and `pure_virtual` macros can be added to all classes with:
 
-```
+```ruby
 require 'virtual'
 Virtual.activate
 ```
