@@ -1,3 +1,6 @@
-require 'virtual/controls/example'
+require 'virtual/controls/clean'
 require 'virtual/controls/included'
 require 'virtual/controls/extended'
+require 'virtual/controls/virtual_method'
+require 'virtual/controls/pure_virtual_method'
+require 'virtual/controls/abstract_method'

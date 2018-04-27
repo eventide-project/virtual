@@ -1,7 +1,10 @@
 module Virtual
   module Controls
-    module Example
+    module AbstractMethod
       class Example
+        include Virtual
+
+        pure_virtual :some_pure_virtual_method
       end
 
       def self.example
