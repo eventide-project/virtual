@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name = 'evt-virtual'
-  s.version = '0.1.1.0'
+  s.version = '0.1.1.1'
   s.summary = 'Virtual method declaration'
   s.description = ' '
 
