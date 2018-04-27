@@ -16,21 +16,40 @@ The `virtual` and `pure_virtual` macros can be added to all classes with:
 require 'virtual'; Virtual.activate
 ```
 
-Optionally, they can be applied to a single class with `Virtual.activate(MyClass)`
-
 `virtual` is an indication that a method _may_ be overridden.
 `pure_virtual` is an indication that a method __must__ be overridden (if it is not, an error will be raised when called).
 
 
 ## Example
 
-```
-class MyClass
+```ruby
+class Something
   virtual :my_optional_method
   pure_virtual :my_required_method
 end
 ```
 
+If the `virtual` library is not activated, the module can be included in the class:
+
+```ruby
+class Something
+  include Virtual
+
+  virtual :my_optional_method
+  pure_virtual :my_required_method
+end
+```
+
+The `pure_virtual` macro is also aliased to `abstract`:
+
+```ruby
+class Something
+  include Virtual
+
+  abstract :my_required_method
+end
+```
+
 ## License
 
-The `virtual` library is released under the [MIT License](https://github.com/obsidian-btc/virtual/blob/master/MIT-License.txt).
+The `virtual` library is released under the [MIT License](https://github.com/eventide-project/virtual/blob/master/MIT-License.txt).
