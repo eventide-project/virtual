@@ -9,3 +9,4 @@ require_relative '../init.rb'
 require 'test_bench'; TestBench.activate
 
 require 'virtual/controls'
+Controls = Virtual::Controls
