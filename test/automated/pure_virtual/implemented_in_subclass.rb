@@ -5,8 +5,8 @@ context "Pure Virtual" do
     example = Controls::PureVirtualMethod::Implemented.example
 
     test "Does not raise an error" do
-      refute proc { example.some_pure_virtual_method } do
-        raises_error?
+      refute_raises Virtual::PureMethod::Error do
+        example.some_pure_virtual_method
       end
     end
   end

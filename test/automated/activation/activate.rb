@@ -5,10 +5,8 @@ context "Activation" do
     Virtual.activate(Controls::Clean::Example)
     example = Controls::Clean.example
 
-    context "Activated" do
-      assert example, Virtual::Assertions do
-        activated?
-      end
+    test "Activated" do
+      assert Virtual.activated?(example)
     end
   end
 end

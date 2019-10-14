@@ -4,8 +4,8 @@ context "Virtual" do
   example = Controls::VirtualMethod.example
 
   test "Method with parameters" do
-    refute proc { example.some_virtual_method 'some value', 'some other value' } do
-      raises_error?
+    refute_raises do
+      example.some_virtual_method 'some value', 'some other value'
     end
   end
 end

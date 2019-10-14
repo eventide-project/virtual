@@ -5,8 +5,8 @@ context "Pure Virtual" do
     example = Controls::PureVirtualMethod.example
 
     test "Raises an error" do
-      assert proc { example.some_pure_virtual_method } do
-        raises_error? Virtual::PureMethod::Error
+      assert_raises Virtual::PureMethod::Error do
+        example.some_pure_virtual_method
       end
     end
   end

@@ -4,10 +4,8 @@ context "Activation" do
   context "Include" do
     example = Controls::Included.example
 
-    context "Activated" do
-      assert example, Virtual::Assertions do
-        activated?
-      end
+    test "Activated" do
+      assert Virtual.activated?(example)
     end
   end
 end
