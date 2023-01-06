@@ -7,9 +7,10 @@ module Virtual
     end
 
     def self.define(target_class, method_name)
-      already_defined = target_class.instance_methods(true).include?(method_name)
+      method_defined = target_class.method_defined?(method_name, true) ||
+        target_class.private_method_defined?(method_name, true)
 
-      if not already_defined
+      if not method_defined
         target_class.send :define_method, method_name do |*args|
           raise Error, "\"#{method_name}\" of #{self.class.name}"
         end
