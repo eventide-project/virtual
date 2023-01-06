@@ -10,5 +10,10 @@ module Virtual
     end
     alias :pure_virtual :pure_macro
     alias :abstract :pure_macro
+
+    def protocol_macro(method_name)
+      Virtual::ProtocolMethod.define self, method_name
+    end
+    alias :protocol :protocol_macro
   end
 end
