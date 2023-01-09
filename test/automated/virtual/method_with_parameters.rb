@@ -5,7 +5,7 @@ context "Virtual" do
 
   test "Method with parameters" do
     refute_raises do
-      example.some_virtual_method 'some value', 'some other value'
+      example.some_virtual_method('some value', 'some other value')
     end
   end
 end

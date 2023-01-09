@@ -4,7 +4,8 @@ module Virtual
       blk ||= proc do |*|
       end
 
-      target_class.send :define_method, method_name, &blk
+      ## Using inline block would be consistent with other implementations
+      target_class.send(:define_method, method_name, &blk)
     end
   end
 end

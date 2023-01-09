@@ -6,7 +6,7 @@ context "Activation" do
     example = Controls::Clean.example
 
     test "Activated" do
-      assert Virtual.activated?(example)
+      assert(Virtual.activated?(example))
     end
   end
 end

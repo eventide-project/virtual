@@ -11,7 +11,7 @@ module Virtual
         target_class.private_method_defined?(method_name, true)
 
       if not method_defined
-        target_class.send :define_method, method_name do |*args|
+        target_class.send(:define_method, method_name) do |*args|
           raise Error, "\"#{method_name}\" of #{self.class.name}"
         end
       end

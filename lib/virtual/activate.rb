@@ -12,7 +12,10 @@ module Virtual
 
     subject = subject_class(target_class)
 
+    ## Account for protocol
     ['virtual', 'pure_virtual', 'abstract'].each do |mthd|
+      ## Don't use fail
+      ## Don't use unless
       fail mthd unless subject.respond_to?(mthd)
     end
   end
