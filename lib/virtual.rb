@@ -1,4 +1,4 @@
-require 'virtual/method'
+require 'virtual/virtual_method'
 require 'virtual/pure_method'
 require 'virtual/protocol_method'
 require 'virtual/macro'
