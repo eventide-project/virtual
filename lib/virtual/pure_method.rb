@@ -4,11 +4,11 @@ module Virtual
 
     def self.define(target_class, method_name)
       if target_class.method_defined?(method_name)
-        raise Error, "The #{target_class} class already has an implementation of the #{method_name} method"
+        raise Error, "#{target_class} already has an implementation of the #{method_name} method"
       end
 
       target_class.send(:define_method, method_name) do |*args|
-        raise Error, "Pure virtual (abstract) method #{method_name} must be implemented"
+        raise Error, "Pure virtual (abstract) method #{method_name} of #{self.class.name} must be implemented"
       end
     end
   end

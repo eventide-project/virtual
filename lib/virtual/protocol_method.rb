@@ -1,10 +1,6 @@
 module Virtual
   module ProtocolMethod
-    class Error < RuntimeError
-      def initialize(message)
-        super("Pure virtual (abstract) protocol method #{message} must be implemented")
-      end
-    end
+    Error = Class.new(RuntimeError)
 
     def self.define(target_class, method_name)
       method_defined = target_class.method_defined?(method_name, true) ||
@@ -12,7 +8,7 @@ module Virtual
 
       if not method_defined
         target_class.send(:define_method, method_name) do |*args|
-          raise Error, "\"#{method_name}\" of #{self.class.name}"
+          raise Error, "Pure virtual (abstract) protocol method #{method_name} of #{self.class.name} must be implemented"
         end
       end
     end
