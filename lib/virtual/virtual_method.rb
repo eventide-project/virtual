@@ -1,12 +1,17 @@
 module Virtual
   module VirtualMethod
-    Error = Class.new(RuntimeError)
+    DefinitionError = Class.new(RuntimeError)
 
-    def self.define(target_class, method_name, &blk)
-      ## Re-enable when possible. Caused regressions in core libraries - Scott, Tue Jan 10 2022
-      # if target_class.method_defined?(method_name)
-      #   raise Error, "#{target_class} already has an implementation of the #{method_name} method"
-      # end
+    def self.define(target_class, method_name, strict=nil, &blk)
+      if strict.nil?
+        strict = true
+      end
+
+      if strict
+        if target_class.method_defined?(method_name)
+          raise DefinitionError, "#{target_class} already has an implementation of the `#{method_name}' method"
+        end
+      end
 
       blk ||= proc do |*|
       end

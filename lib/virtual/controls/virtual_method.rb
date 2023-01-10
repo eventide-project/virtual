@@ -25,15 +25,15 @@ module Virtual
         end
       end
 
-      module Override
-        def self.example
+      module StrictOverride
+        def self.example(strict:)
           Class.new do
             include Virtual
 
             def some_virtual_method
             end
 
-            virtual :some_virtual_method
+            virtual :some_virtual_method, strict: strict
           end
         end
       end
