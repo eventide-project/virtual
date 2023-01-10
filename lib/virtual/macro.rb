@@ -1,7 +1,7 @@
 module Virtual
   module Macro
     def virtual_macro(method_name, &blk)
-      Virtual::Method.define(self, method_name, &blk)
+      Virtual::VirtualMethod.define(self, method_name, &blk)
     end
     alias :virtual :virtual_macro
 

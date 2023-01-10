@@ -1,5 +1,5 @@
 module Virtual
-  module Method
+  module VirtualMethod
     Error = Class.new(RuntimeError)
 
     def self.define(target_class, method_name, &blk)
