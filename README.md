@@ -8,14 +8,17 @@ A _virtual method_ is a method which is inheritable and overridable. Since all m
  
 When developing framework style code, it is often required to override or implement a specific method in order to satisfy a contract. The purpose of this library is to provide a way for a developer of framework code to convey that intent.
 
-The `virtual` library adds two macros to a class:
+The `virtual` library adds three macros to a class:
 
 - `virtual`
 - `pure_virtual`
+- `protocol`
 
-`virtual` is an indication that a method _may_ be overridden. `pure_virtual` is an indication that a method __must__ be overridden in a subclass (if it is not, an error will be raised when called).
+A virtual method is a method _may_ be implemented in a subclass. A virtual method cannot be declared in a subclass that already has a concrete method of the same name.
 
-The `pure_virtual` macro is also aliased to `abstract`.
+A pure virtual method is a method _must_ be implemented in a subclass. If it is not, an error will be raised when the method is called. A pure virtual method cannot be declared in a subclass that already has a concrete method of the same name. The `pure_virtual` macro is also aliased to `abstract`.
+
+A protocol method is a specialization of a pure virtual method. It must be implemented in a subclass. A protocol method can be declared in a subclass that already has a concrete method of the same name.
 
 ## Activation
 
@@ -32,8 +35,9 @@ To avoid modifying the `Object` class, include the `Virtual` module directly in 
 
 ```ruby
 class Something
-  virtual :my_optional_method
-  pure_virtual :my_required_method
+  virtual :some_virtual_method
+  pure_virtual :some_abstract_method
+  pure_virtual :some_protocol_method
 end
 ```
 
@@ -43,8 +47,9 @@ If the `virtual` library is not activated, the module can be included in the cla
 class Something
   include Virtual
 
-  virtual :my_optional_method
-  pure_virtual :my_required_method
+  virtual :some_virtual_method
+  pure_virtual :some_abstract_method
+  pure_virtual :some_protocol_method
 end
 ```
 
@@ -54,7 +59,7 @@ The `pure_virtual` macro is also aliased to `abstract`:
 class Something
   include Virtual
 
-  abstract :my_required_method
+  abstract :some_abstract_method
 end
 ```
 
