@@ -1,27 +1,27 @@
 module Virtual
   module Controls
     module VirtualMethod
+      def self.example
+        Example.new
+      end
+
       class Example
         include Virtual
 
         virtual :some_virtual_method
       end
 
-      def self.example
-        Example.new
-      end
-
       module Body
+        def self.example
+          Example.new
+        end
+
         class Example
           include Virtual
 
           virtual :some_virtual_method do |*|
             :something
           end
-        end
-
-        def self.example
-          Example.new
         end
       end
     end
