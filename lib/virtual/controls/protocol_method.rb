@@ -1,6 +1,6 @@
 module Virtual
   module Controls
-    module PureVirtualMethod
+    module ProtocolMethod
       def self.example
         Example.new
       end
@@ -8,7 +8,7 @@ module Virtual
       class Example
         include Virtual
 
-        pure_virtual :some_pure_virtual_method
+        protocol :some_protocol_method
       end
 
       module Implemented
@@ -17,7 +17,7 @@ module Virtual
         end
 
         class Implementer < Example
-          def some_pure_virtual_method
+          def some_protocol_method
           end
         end
       end
@@ -27,10 +27,10 @@ module Virtual
           Class.new do
             include Virtual
 
-            def some_pure_virtual_method
+            def some_protocol_method
             end
 
-            pure_virtual :some_pure_virtual_method
+            protocol :some_protocol_method
           end
         end
       end

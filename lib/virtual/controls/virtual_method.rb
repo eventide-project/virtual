@@ -24,6 +24,19 @@ module Virtual
           end
         end
       end
+
+      module Override
+        def self.example
+          Class.new do
+            include Virtual
+
+            def some_virtual_method
+            end
+
+            virtual :some_virtual_method
+          end
+        end
+      end
     end
   end
 end
