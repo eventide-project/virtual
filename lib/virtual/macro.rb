@@ -15,5 +15,14 @@ module Virtual
       Virtual::ProtocolMethod.define(self, method_name)
     end
     alias :protocol :protocol_macro
+
+    def self.macro_methods
+      [
+        'virtual',
+        'pure_virtual',
+        'abstract',
+        'protocol'
+      ]
+    end
   end
 end
