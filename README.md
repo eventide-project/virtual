@@ -18,7 +18,7 @@ A virtual method is a method _may_ be implemented in a subclass. A virtual metho
 
 A pure virtual method is a method _must_ be implemented in a subclass. If it is not, an error will be raised when the method is called. A pure virtual method cannot be declared in a subclass that already has a concrete method of the same name. The `pure_virtual` macro is also aliased to `abstract`.
 
-A protocol method is a specialization of a pure virtual method. It must be implemented in a subclass. A protocol method can be declared in a subclass that already has a concrete method of the same name.
+A protocol method is a specialization of a pure virtual method. It must be implemented in a subclass _unless_ the subclass already has a concrete implementation of the same name.
 
 ## Activation
 
