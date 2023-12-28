@@ -1,3 +1,4 @@
+require 'virtual/method_defined'
 require 'virtual/virtual_method'
 require 'virtual/pure_method'
 require 'virtual/protocol_method'
