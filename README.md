@@ -2,6 +2,9 @@
 
 Virtual method declaration.
 
+> [!WARNING]
+> The Virtual library has been replaced by [Template Method](https://github.com/eventide-project/template-method)
+
 ## Summary
 
 A _virtual method_ is a method which is inheritable and overridable. Since all methods in ruby are virtual, syntax is not required to provide this capability.
